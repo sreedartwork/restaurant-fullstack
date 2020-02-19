@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-
-
-
-
 @section('content')
   <div id="about-page">
       <div class="content-box">
