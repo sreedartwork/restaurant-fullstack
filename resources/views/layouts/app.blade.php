@@ -66,12 +66,12 @@
         </style>
     </head>
     <body>
-      <section id="app-layout">
+        <section id="app-layout">
         @include('includes.side-menu')
         <section id="content-section">
-          @yield('content')
+            @yield('content')
         </section>
-      </section>
-  </section>
+        </section>
+    </section>
     </body>
 </html>
