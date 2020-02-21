@@ -5,7 +5,7 @@
 
 
 @section('content')
-     <section id="information">
+    <section id="information">
     <div class="restaurant-image">
       <img src="img/top-down.jpg">
     </div>
