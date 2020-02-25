@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
             <div class="container-fluid  dashboard-content">
                 <!-- ============================================================== -->
                 <!-- pageheader -->
@@ -9,7 +8,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Food Categories </h2>
+                            <h2 class="pageheader-title">Food Categories</h2>
                             <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
@@ -25,7 +24,7 @@
                 <!-- ============================================================== -->
                 <!-- end pageheader -->
                 <!-- ============================================================== -->
-    
+               
                     <div class="row">
                         <!-- ============================================================== -->
                         <!-- basic table -->
@@ -45,33 +44,39 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Burgers</td>
-                                                <td>2/2/2020</td>
-                                                <td>
-                                                    <a href="/admin/food-categories/1/edit"><i class="far fa-edit"></i></a>
-                                                </td>
-                                                <td>
-                                                    <a href="/admin/food-categories/1/delete" onclick="if (! confirm('Are you sure you want to delete category?')) { return false; }"><i class="far fa-trash-alt">
-                                                    </a></i>
-                                                </td>
-                                            </tr>
+                                            @foreach ($categories as $category)
+                                                <tr>
+                                                    <th scope="row">{{$category->id}}</th>
+                                                    <td>{{$category->title}} </td>
+                                                    <td>{{date('m/d/Y', strtotime($category->updated_at))}}</td>
+                                                    <td>
+                                                        <a href="/admin/food-categories/{{$category->id}}/edit"><i class="far fa-edit"></i></a>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                        <a href="#" onclick="event.preventDefault();
+                                document.getElementById('delete-category-{{$category->id}}').submit();">
+                                    <i class="far fa-trash-alt"></i>
+                                </a>
+                                <form id="delete-category-{{$category->id}}" action="/admin/food-categories/{{$category->id}}/delete" method="POST" style="display: none;">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+
+                                                    </td>
+                                                </tr>    
+                                            @endforeach
+                                            
                                         </tbody>
                                     </table>
+                                    {{ $categories->links() }}
                                 </div>
                             </div>
                         </div>
                         <!-- ============================================================== -->
                         <!-- end basic table -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- end responsive table -->
+                        
                         <!-- ============================================================== -->
                     </div>
-
+            
 @endsection
-
-
-
