@@ -1,5 +1,5 @@
 <section id="food-preview">
-    <h2>BBQ gauranteed to blow your mind</h2>
+    <h2>BBQ guaranteed to blow your mind</h2>
     
     <div class="container">
       <div class="left-btn">

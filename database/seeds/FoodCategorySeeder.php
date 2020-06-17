@@ -57,7 +57,7 @@ class FoodCategorySeeder extends Seeder
             'created_at' => Carbon::now()
         ]);
         DB::table('food_categories')->insert([
-            'title' => 'Deserts',
+            'title' => 'Desserts',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti cupiditate architecto officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis aliquam vel voluptas repellendus natus nihil?',
             'image_url' => '/img/Download-Cupcake-PNG-Transparent-Image-420x190.png',
             'updated_at' => Carbon::now(),
