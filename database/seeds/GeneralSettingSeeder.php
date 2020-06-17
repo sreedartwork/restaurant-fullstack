@@ -14,7 +14,7 @@ class GeneralSettingSeeder extends Seeder
     {
         
         DB::table('general_settings')->insert([
-            'site_title' => 'Billys Burger',
+            'site_title' => 'TNT Hot Wings And BBQ',
             'logo_image_url' => '/img/clipart-restaurant-restaurant-logo-5.png',
             'address_1' => '234 Main st,',
             'address_2' => '',

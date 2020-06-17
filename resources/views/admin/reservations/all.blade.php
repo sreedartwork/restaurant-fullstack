@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
             <div class="container-fluid  dashboard-content">
                 <!-- ============================================================== -->
                 <!-- pageheader -->
@@ -25,7 +24,7 @@
                 <!-- ============================================================== -->
                 <!-- end pageheader -->
                 <!-- ============================================================== -->
-    
+               
                     <div class="row">
                         <!-- ============================================================== -->
                         <!-- basic table -->
@@ -41,19 +40,18 @@
                                                 <th scope="col">Full Name</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Phone Number</th>
-                                                <th scope="col">Guest Total</th>
+                                                <th scope="col">Guests Total</th>
                                                 <th scope="col">Time</th>
                                                 <th scope="col">Date Created</th>
                                                 <th scope="col">Edit</th>
                                                 <th scope="col">Delete</th>
-                                              
                                             </tr>
                                         </thead>
                                         <tbody>
-                                             @foreach ($reservations as $reservation)
+                                            @foreach ($reservations as $reservation)
                                                 <tr>
                                                     <th scope="row">{{$reservation->id}}</th>
-                                                    <td>{{$reservation->fname}} {{$reservation->lname}} </td>
+                                                    <td>{{$reservation->fname}} {{$reservation->lname}}</td>
                                                     <td>{{$reservation->email}}</td>
                                                     <td>{{$reservation->phone_number}}</td>
                                                     <td>{{$reservation->guests_total}}</td>
@@ -85,14 +83,10 @@
                         </div>
                         <!-- ============================================================== -->
                         <!-- end basic table -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- end responsive table -->
+                        
                         <!-- ============================================================== -->
                     </div>
-
+            
 @endsection
-
 
 

@@ -31,8 +31,6 @@ class ReservationController extends Controller
             'phone_number' => ['required', 'string'],
             'guests_total' => ['required', 'string'],
             'time' => ['required'],
-            
-            
         ]);
         $reservation = new Reservation();
         $reservation->fname = request('fname');

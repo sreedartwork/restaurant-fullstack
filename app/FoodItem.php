@@ -10,9 +10,13 @@ class FoodItem extends Model
 
     protected $fillable = [
         'title', 'description', 'image_url', 'price', 'category_id'
+        
+
     ];
 
     public function categories(){
         return $this->belongsTo('App\FoodCategory');
     }
 }
+
+

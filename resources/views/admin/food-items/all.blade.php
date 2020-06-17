@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
             <div class="container-fluid  dashboard-content">
                 <!-- ============================================================== -->
                 <!-- pageheader -->
@@ -25,7 +24,7 @@
                 <!-- ============================================================== -->
                 <!-- end pageheader -->
                 <!-- ============================================================== -->
-    
+               
                     <div class="row">
                         <!-- ============================================================== -->
                         <!-- basic table -->
@@ -39,6 +38,7 @@
                                             <tr>
                                                 <th scope="col">id</th>
                                                 <th scope="col">Title</th>
+                                                {{-- <th sope="col">Size</th> --}}
                                                 <th scope="col">Price</th>
                                                 <th scope="col">Date</th>
                                                 <th scope="col">Edit</th>
@@ -46,18 +46,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tbody>
                                             @foreach ($items as $item)
                                                 <tr>
                                                     <th scope="row">{{$item->id}}</th>
                                                     <td>{{$item->title}} </td>
+                                                    {{-- <td>{{$item->size}} </td> --}}
                                                     <td>{{$item->price}} </td>
                                                     <td>{{date('m/d/Y', strtotime($item->updated_at))}}</td>
                                                     <td>
                                                         <a href="/admin/food-items/{{$item->id}}/edit"><i class="far fa-edit"></i></a>
                                                     </td>
                                                     <td>
-                                                        
                                                         <a href="#" onclick="event.preventDefault();
                                 document.getElementById('delete-item-{{$item->id}}').submit();">
                                     <i class="far fa-trash-alt"></i>
@@ -70,8 +69,6 @@
                                                     </td>
                                                 </tr>    
                                             @endforeach
-                                            
-                                        </tbody>
                                         </tbody>
                                     </table>
                                     {{ $items->links() }}
@@ -80,14 +77,10 @@
                         </div>
                         <!-- ============================================================== -->
                         <!-- end basic table -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- end responsive table -->
+                        
                         <!-- ============================================================== -->
                     </div>
-
+            
 @endsection
-
 
 

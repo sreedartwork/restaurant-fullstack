@@ -13,7 +13,7 @@
           </p>
           </div>
         <div class="col-md-6">
-          <img src="/img/about-page-img.png" class="img-fluid">
+          <img src="/img/top-food.png" class="img-fluid">
         </div>
         </div>
       </div>

@@ -5,23 +5,23 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #ed4852; /* Old browsers */
+    background: white; /* Old browsers */
     background: -moz-radial-gradient(
         center,
         ellipse cover,
-        #ed4852 0%,
-        #9c1b24 100%
+        #ffffff 0%,
+        #ffffff 100%
     ); /* FF3.6-15 */
     background: -webkit-radial-gradient(
         center,
         ellipse cover,
-        #ed4852 0%,
-        #9c1b24 100%
+        #ffffff 0%,
+        #ffffff 100%
     ); /* Chrome10-25,Safari5.1-6 */
     background: radial-gradient(
         ellipse at center,
-        #ed4852 0%,
-        #9c1b24 100%
+        #ffffff 0%,
+        #ffffff 100%
     ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     overflow: hidden;
     padding: 100px;
@@ -40,10 +40,10 @@
         font-size: 4rem;
         font-weight: 900;
         align-self: flex-start;
-        color: white;
+        color: rgb(255, 81, 81);
         margin-bottom: 100px;
     }
-    .burger-fries {
+    .top-food {
         width: 100%;
         // max-width: 1000px;
         // animation: moveUpandDown 1s linear infinite;

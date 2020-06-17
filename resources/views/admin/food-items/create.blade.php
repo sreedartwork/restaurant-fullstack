@@ -46,6 +46,20 @@
                                                 </span>
                                             @enderror
                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label for="inputsize">Size</label>
+                                            <input id="inputsize" type="text" class="form-control form-control-lg @error('size') is-invalid @enderror" name="size" value="{{ old('size') }}" required autocomplete="size" autofocus placeholder="Give Item a Size">
+
+                                            @error('size')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div> 
+
+
                                         <div class="form-group">
                                             <label for="inputprice">Price</label>
                                             <input id="inputprice" type="text" class="form-control form-control-lg @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus placeholder="Give Item a Price">
@@ -56,6 +70,7 @@
                                                 </span>
                                             @enderror
                                         </div>
+
                                         <div class="form-group">
                                             <label for="inputcategory">Category</label>
                                             <select name="category_id" class="form-control" id="inputrole">
@@ -65,6 +80,8 @@
                                                 @endforeach
                                             </select>
                                         </div>
+
+                                        
                                         <div class="form-group">
                                             <label for="inputimageurl">Image Url</label>
                                             <input id="inputimageurl" type="text" class="form-control form-control-lg @error('image_url') is-invalid @enderror" name="image_url" value="{{ old('image_url') }}" autocomplete="title" autofocus placeholder="Add the url to the Item image">

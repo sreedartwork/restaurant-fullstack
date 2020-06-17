@@ -14,7 +14,7 @@ class SettingController extends Controller
     {
         $this->middleware('auth');
     }
-  
+
     public function general(){
         $id = 1;
         $general_setting = GeneralSetting::find($id);
@@ -32,9 +32,8 @@ class SettingController extends Controller
             'state' => ['required', 'string'],
             'zipcode' => ['required', 'string'],
             'phone_number' => ['required', 'string']
-            
         ]);
-
+       
         $general_setting = GeneralSetting::find($id);
         $general_setting->site_title = request('site_title');
         $general_setting->address_1 = request('address_1');
@@ -61,10 +60,8 @@ class SettingController extends Controller
         request()->validate([
             'description' => ['required', 'string'],
             'keywords' => ['required', 'string']
-            
-            
         ]);
-
+       
         $seo_setting = SeoSetting::find($id);
         $seo_setting->description = request('description');
         $seo_setting->keywords = request('keywords');
@@ -76,6 +73,7 @@ class SettingController extends Controller
     public function social(){
         $id = 1;
         $social_setting = SocialSetting::find($id);
+
         
         return view('admin/settings/social', [
             'social_setting' => $social_setting
@@ -86,12 +84,9 @@ class SettingController extends Controller
         request()->validate([
             'facebook_url' => ['string'],
             'twitter_url' => ['string'],
-            'instagram_url' => ['string']
-            
-            
-            
+            'instagram_url' => ['string'],
         ]);
-
+       
         $social_setting = SocialSetting::find($id);
         $social_setting->facebook_url = request('facebook_url');
         $social_setting->twitter_url = request('twitter_url');

@@ -14,12 +14,12 @@ class MemberController extends Controller
     }
     public function index(){
         $members = Member::paginate(10);
+        
 
         return view('admin/members/all', [
             'members' => $members
         ]);
     }
-    
     public function delete($id){
         $member = Member::find($id);
         $member->delete();

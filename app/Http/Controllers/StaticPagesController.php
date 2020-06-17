@@ -5,11 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Member;
 use App\Reservation;
+use App\FoodCategory;
+use App\FoodItem;
+
 
 class StaticPagesController extends Controller
 {
     public function home(){
-        return view('home');
+        
+        $categories = FoodCategory::all();
+
+        return view('home', [
+            "categories" => $categories
+        ]);
     }
     public function about(){
         return view('pages/about');
@@ -24,7 +32,7 @@ class StaticPagesController extends Controller
             'email' => ['required', 'string'],
             'phone_number' => ['required', 'string'],
             'guests_total' => ['required', 'string'],
-            'time' => ['required', 'string'],
+            'time' => ['required', 'string']
         ]);
         $reservation = new Reservation();
         $reservation->fname = request('fname');
@@ -49,7 +57,7 @@ class StaticPagesController extends Controller
             'fname' => ['required', 'string'],
             'lname' => ['required', 'string'],
             'email' => ['required', 'string'],
-            'phone_number' => ['required', 'string'],
+            'phone_number' => ['required', 'string']
         ]);
         $member = new Member();
         $member->fname = request('fname');
@@ -65,11 +73,20 @@ class StaticPagesController extends Controller
         return view('pages/thank-you');
     }
     public function menu(){
-        return view('menu/index');
+        $categories = FoodCategory::all();
+
+        return view('menu/all-categories', [
+            'categories' => $categories
+        ]);
     }
-    public function singleMenu(){
-        return view('menu/single-menu');
+    public function singleMenu($slug){
+        $foodCategory = FoodCategory::where('title', '=', $slug)->first();
+        $foodItems = FoodItem::where('category_id', '=', $foodCategory->id)->get();
+
+        return view('menu/single-menu', [
+            "foodItem" => ucfirst($slug),
+            "foodItems" => $foodItems
+        ]);
     }
 }
-
 

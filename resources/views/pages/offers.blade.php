@@ -51,7 +51,7 @@
                 <div class="col-md-6">
                       <div class="form-group">
                   <label for="inputphone">Phone #</label>
-                  <input id="inputphone" type="tel" class="form-control form-control-lg @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus placeholder="4042345678">
+                  <input id="inputphone" type="tel" class="form-control form-control-lg @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus placeholder="(404)234-5678">
 
                   @error('phone_number')
                       <span class="invalid-feedback" role="alert">

@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
-           <div class="container-fluid  dashboard-content">
+            <div class="container-fluid  dashboard-content">
                 <!-- ============================================================== -->
                 <!-- pageheader -->
                 <!-- ============================================================== -->
@@ -15,7 +14,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/admin" class="breadcrumb-link">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Edit  Social Media Setting</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Edit Social Media Settings</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -25,7 +24,7 @@
                 <!-- ============================================================== -->
                 <!-- end pageheader -->
                 <!-- ============================================================== -->
-
+             
                     <div class="row">
                         <!-- ============================================================== -->
                         <!-- basic form -->
@@ -38,7 +37,7 @@
                                         @csrf
                                         @method('PUT')
                                         <div class="form-group">
-                                            <label for="inputtitle">Facebook Profile URL</label>
+                                            <label for="inputfacebook_url">Facebook Profile URL</label>
                                             <input id="inputfacebook_url" type="text" class="form-control form-control-lg @error('facebook_url') is-invalid @enderror" name="facebook_url" value="{{ old('facebook_url', $social_setting->facebook_url) }}" required autocomplete="facebook_url" autofocus placeholder="Add Facebook Profile">
 
                                             @error('facebook_url')
@@ -47,7 +46,7 @@
                                                 </span>
                                             @enderror
                                         </div>
-                                         <div class="form-group">
+                                        <div class="form-group">
                                             <label for="inputtwitter_url">Twitter Profile URL</label>
                                             <input id="inputtwitter_url" type="text" class="form-control form-control-lg @error('twitter_url') is-invalid @enderror" name="twitter_url" value="{{ old('twitter_url', $social_setting->twitter_url) }}" required autocomplete="twitter_url" autofocus placeholder="Add Twitter Profile">
 
@@ -57,7 +56,7 @@
                                                 </span>
                                             @enderror
                                         </div>
-                                         <div class="form-group">
+                                        <div class="form-group">
                                             <label for="inputinstagram_url">Instagram Profile URL</label>
                                             <input id="inputinstagram_url" type="text" class="form-control form-control-lg @error('instagram_url') is-invalid @enderror" name="instagram_url" value="{{ old('instagram_url', $social_setting->instagram_url) }}" required autocomplete="instagram_url" autofocus placeholder="Add Instagram Profile">
 
@@ -67,15 +66,15 @@
                                                 </span>
                                             @enderror
                                         </div>
-                                       
+                                        
                                         <div class="row">
                                             <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
-
+                                                
                                             </div>
                                             <div class="col-sm-6 pl-0">
                                                 <p class="text-right">
                                                     <button type="submit" class="btn btn-space btn-primary">Submit</button>
-
+                                                    
                                                 </p>
                                             </div>
                                         </div>
@@ -85,11 +84,11 @@
                         </div>
                         <!-- ============================================================== -->
                         <!-- end basic form -->
-
+                        
                     </div>
-
+                    
             </div>
+            
 @endsection
-
 
 
